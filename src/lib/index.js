@@ -6,3 +6,4 @@ export { default as WrapperWithSingleSelectedItem } from "./WrapperWithSingleSel
 export { default as NavButtons } from "./NavButtons.svelte";
 
 export { default as ItemHeadline } from "./ItemHeadline.svelte";
+export { default as MultichoiceCard } from "./MultichoiceCard.svelte";

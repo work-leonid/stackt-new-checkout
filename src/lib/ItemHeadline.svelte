@@ -1,14 +1,16 @@
 <script>
-  export let title = "";
+  export let text = "";
   export let image = "";
   export let benefits = [];
 </script>
 
-<div class="flex flex-col *:flex-1 gap-3 sm:gap-6 sm:flex-row sm:items-end">
+<div
+  class="flex mb-4 flex-col *:flex-1 gap-3 sm:gap-6 sm:flex-row sm:items-end"
+>
   <div>
     <slot />
     <p class="text-balance">
-      {title}
+      {text}
     </p>
     {#if benefits.length > 0}
       <ul class="flex mt-2 flex-col gap-1.5">
