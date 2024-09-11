@@ -79,7 +79,7 @@
     {
       title: "Moving",
       description: "",
-      price: "from £999",
+      price: "from £99",
     },
     {
       title: "Packing",

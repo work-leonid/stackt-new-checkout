@@ -11,7 +11,7 @@
   }
 
   export let nextAction = () => {}; // Function to handle the "Next" button
-  export let prevAction = null; // Function to handle the "Previous" button, if provided
+  export let prevAction = null;
 </script>
 
 <div class="grid grid-cols-1 gap-2">
@@ -19,7 +19,7 @@
     <div>
       <!-- Card -->
       <div
-        class={`card-wrapper ${
+        class={`card-wrapper sm:pt-0 ${
           preselectedOption === option.title ? "card-wrapper-selected" : ""
         }`}
         on:click={() => selectOption(option.title, index)}

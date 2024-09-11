@@ -6,31 +6,53 @@
   import Header from "$lib/Header.svelte";
   import HeadlineCard from "$lib/HeadlineCard.svelte";
   import WrapperWithSingleSelectedItem from "$lib/WrapperWithSingleSelectedItem.svelte";
+  import PackingAdditionalServices from "$lib/PackingAdditionalServices.svelte";
 
-  const movingBenefits = [
-    "No overtime charges",
-    "Professional movers with bodycams",
+  const packingBenefits = [
+    "Proffessional packing materials",
+    "Save your time and money",
     "Insurance included in price",
   ];
 
   function goToNextPage() {
+    goto("/moving/cleaning");
+  }
+  function goToPreviousPage() {
     goto("/moving/flat");
   }
 
   const packingVariants = [
     {
-      title: "Packing option",
-      description:
-        "up to 2 hrs • max 10 boxes or similar sized items • up to 25 miles",
-      price: "£1690",
+      title: "No, thank you",
+      description: "I'll pack all my items myself",
+      price: "",
+    },
+
+    {
+      title: "All-inclusive packing",
+      description: "Unlimited packing materials included",
+      price: "£349",
     },
     {
-      title: "Packing option 2",
-      description: "max 30 large boxes • up to 25 miles",
-      price: "£2509",
+      title: "Professional packing service",
+      description:
+        "We will pack your items in the safest way possible. You can add any additional packing materials if you'd like",
+      price: "£259",
+    },
+    {
+      title: "Packing by furniture",
+      description:
+        "For big furniture like wardrobe, desk, etc. Includes packing materials",
+      price: "from £179",
+    },
+    {
+      title: "Additional services",
+      description:
+        "If you want to pack your own belongings and need professional packing materials.",
+      price: "",
     },
   ];
-  let preselectedOption = "Packing option";
+  let preselectedOption = "No, thank you";
   let preSelectedSlotPosition = 0;
 
   let storedPriceFromFirstPage = 0; // To hold the stored price from the first page
@@ -54,10 +76,10 @@
 
 <Header />
 <HeadlineCard
-  headline="Packing 🔥 - flexible & adaptive to your needs"
-  subheadline=""
-  image="/img/moving.svg"
-  benefits={movingBenefits}
+  headline="Save your belongings while moving"
+  subheadline="Professional packing service for your items"
+  image="/img/packing.svg"
+  benefits={packingBenefits}
 />
 
 <WrapperWithSingleSelectedItem
@@ -65,10 +87,9 @@
   bind:preselectedOption
   bind:preSelectedSlotPosition
   nextAction={goToNextPage}
+  prevAction={goToPreviousPage}
 >
-  {#if preselectedOption === "Packing option"}
-    asdf!
-  {/if}
+  <PackingAdditionalServices />
 </WrapperWithSingleSelectedItem>
 
 <div>

@@ -17,34 +17,40 @@
 <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
   {#each options as option}
     <div
-      class={`p-4 border cursor-pointer transition-all duration-300 rounded-2xl ${
+      class={`card-wrapper  ${
         selectedOptions.includes(option.title)
-          ? "bg-orange-50 ring-4 border-orange-500 ring-orange-500/20"
-          : "bg-white hover:border-orange-500 ring-slate-300"
+          ? "!bg-orange-50 card-wrapper-selected"
+          : ""
       }`}
       on:click={() => toggleOption(option)}
     >
-      <div class="flex gap-3 justify-between items-center">
-        <div class="flex gap-4 justify-between items-center">
-          <div class="w-full flex flex-col gap-1">
-            <h3
-              class={`font-semibold leading-tight ${
-                selectedOptions.includes(option.title) ? "text-orange-600" : ""
-              }`}
-            >
-              {option.title}
-            </h3>
-
-            <!-- Conditionally show description if it's not empty -->
-            {#if option.description && option.description.trim() !== ""}
-              <p
-                class={`text-slate-500 leading-tight text-sm ${
-                  selectedOptions.includes(option.title) ? "text-slate-900" : ""
+      <div class="flex gap-3 justify-between h-full items-center">
+        <div class="flex gap-4 h-full justify-between">
+          <div class="w-full flex flex-col gap-3">
+            <div class="flex flex-col gap-1 h-full">
+              <h3
+                class={`headline ${
+                  selectedOptions.includes(option.title)
+                    ? "text-orange-600"
+                    : ""
                 }`}
               >
-                {option.description}
-              </p>
-            {/if}
+                {option.title}
+              </h3>
+
+              <!-- Conditionally show description if it's not empty -->
+              {#if option.description && option.description.trim() !== ""}
+                <p
+                  class={`text-slate-500 leading-tight text-sm ${
+                    selectedOptions.includes(option.title)
+                      ? "text-slate-900"
+                      : ""
+                  }`}
+                >
+                  {option.description}
+                </p>
+              {/if}
+            </div>
             <p class="font-semibold text-orange-600 shrink-0">
               {option.price}
             </p>

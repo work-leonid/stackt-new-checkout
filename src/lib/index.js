@@ -7,3 +7,6 @@ export { default as NavButtons } from "./NavButtons.svelte";
 
 export { default as ItemHeadline } from "./ItemHeadline.svelte";
 export { default as MultichoiceCard } from "./MultichoiceCard.svelte";
+export { default as PackingAdditionalServices } from "./PackingAdditionalServices.svelte";
+
+export { default as Stepper } from "./Stepper.svelte";
