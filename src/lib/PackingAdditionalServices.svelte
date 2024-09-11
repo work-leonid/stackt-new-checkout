@@ -57,7 +57,7 @@
 </script>
 
 <div>
-  <h2 class="headline">Additional services</h2>
+  <h2 class="headline mb-2">Additional</h2>
   <MultichoiceCard
     options={additionalServices}
     bind:selectedOptions={multiselectedOptions}
