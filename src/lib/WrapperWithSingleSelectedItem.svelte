@@ -27,7 +27,7 @@
         <div
           class={`sticky top-0 z-40 bg-white/90 backdrop-blur-md ${preselectedOption === option.title ? "border-b pb-4 border-b-slate-200" : ""}`}
         >
-          <div class="flex flex-col sm:pt-4 items-baseline">
+          <div class="flex justify-between sm:pt-4 items-baseline">
             <h3
               class={`headline ${
                 preselectedOption === option.title ? "text-orange-600" : ""
