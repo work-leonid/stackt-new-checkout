@@ -91,7 +91,7 @@
 <Header />
 <HeadlineCard
   headline="Professional packing. Save your belongings while moving"
-  subheadline="Professional packing service for your items"
+  subheadline=""
   image="/img/packing.svg"
   benefits={packingBenefits}
 />
