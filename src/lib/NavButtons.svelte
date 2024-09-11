@@ -9,13 +9,13 @@
   {#if prevAction}
     <button
       on:click={prevAction}
-      class="py-1 px-4 size-14 aspect-square rounded-lg sm:rounded-full flex items-center justify-center shrink-0 text-xl bg-white ring-1 ring-slate-200 text-slate-900 hover:bg-slate-50 transition-all duration-300"
+      class="px-5 size-12 sm:px-4 sm:size-14 aspect-square rounded-full flex items-center justify-center shrink-0 text-xl bg-white ring-1 ring-slate-200 text-slate-900 hover:bg-slate-50 transition-all duration-300"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         fill="currentColor"
-        class="size-4"
+        class="size-4 shrink-0"
       >
         <path
           fill-rule="evenodd"
@@ -29,7 +29,7 @@
   <!-- Main "Next" button -->
   <button
     on:click={nextAction}
-    class="px-3 py-3 flex-1 active:scale-95 rounded-full text-lg bg-orange-600 font-semibold text-white hover:bg-orange-500 transition-all duration-300"
+    class="px-3 py-2 flex-1 active:scale-95 rounded-full text-lg bg-orange-600 font-semibold text-white hover:bg-orange-500 transition-all duration-300"
   >
     {text}
   </button>

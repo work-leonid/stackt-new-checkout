@@ -27,21 +27,21 @@
         <div
           class={`sticky top-0 z-40 bg-white/90 backdrop-blur-md ${preselectedOption === option.title ? "border-b pb-4 border-b-slate-200" : ""}`}
         >
-          <div class="flex justify-between sm:pt-4 gap-2 items-baseline">
+          <div class="flex flex-col sm:pt-4 items-baseline">
             <h3
-              class={`font-semibold text-base sm:text-xl text-balance leading-tight ${
+              class={`headline ${
                 preselectedOption === option.title ? "text-orange-600" : ""
               } ${option.description.length > 0 ? "" : ""}`}
             >
               {option.title}
             </h3>
-            <p class="font-semibold sm:text-xl text-orange-600 shrink-0">
+            <p class="headline text-orange-600">
               {option.price}
             </p>
           </div>
           {#if option.description}
             <p
-              class={`text-slate-500 max-w-lg leading-tight text-sm ${
+              class={`text-slate-500 mt-2 max-w-lg leading-tight text-sm ${
                 preselectedOption === option.title ? "text-slate-900" : ""
               }`}
             >
