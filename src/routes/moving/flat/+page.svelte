@@ -5,12 +5,16 @@
   import HeadlineCard from "$lib/HeadlineCard.svelte";
   import WrapperWithSingleSelectedItem from "$lib/WrapperWithSingleSelectedItem.svelte";
 
-  let currentPrice = "Moving total £169";
   const movingBenefits = [
     "No overtime charges",
     "Professional movers with bodycams",
     "Insurance included in price",
   ];
+
+  function goToNextPage() {
+    goto("/moving/flat");
+  }
+
   const flatMovingVariants = [
     {
       title: "Mini Move",
@@ -40,8 +44,8 @@
       price: "from £99",
     },
   ];
-  let selectedOption = "Mini Move"; // Preselect the "Mini Move" option
-  let slotPosition = 0;
+  let preselectedOption = "Mini Move";
+  let preSelectedSlotPosition = 0;
 </script>
 
 <Header />
@@ -54,8 +58,11 @@
 
 <WrapperWithSingleSelectedItem
   options={flatMovingVariants}
-  bind:selectedOption
-  bind:slotPosition
+  bind:preselectedOption
+  bind:preSelectedSlotPosition
+  nextAction={goToNextPage}
 >
-  ddd
+  {#if preselectedOption === "Mini Move"}
+    asdf!
+  {/if}
 </WrapperWithSingleSelectedItem>
