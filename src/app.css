@@ -9,5 +9,5 @@
   @apply bg-white border-orange-500 ring-4 ring-orange-500/20;
 }
 .headline {
-  @apply font-semibold text-xl text-balance leading-tight;
+  @apply font-semibold text-lg text-balance leading-tight;
 }

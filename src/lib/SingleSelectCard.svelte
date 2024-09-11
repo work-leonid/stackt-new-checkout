@@ -18,7 +18,7 @@
       }`}
       on:click={() => selectOption(option)}
     >
-      <div class="flex flex-col justify-between">
+      <div class="flex justify-between">
         {#if option.image}
           <img
             src={`/img/${option.image}`}
@@ -28,23 +28,23 @@
         {/if}
 
         <div class="flex flex-col flex-1">
-          <div class="flex justify-between items-baseline">
+          <div class="flex flex-col justify-between items-baseline">
             <h3
-              class={`font-semibold leading-tight ${
+              class={`headline ${
                 selectedOption === option.title ? "text-orange-600" : ""
               }`}
             >
               {option.title}
             </h3>
             {#if option.price}
-              <p class="font-semibold text-orange-600 shrink-0">
+              <p class="headline text-orange-600">
                 {option.price}
               </p>
             {/if}
           </div>
           {#if option.description && option.description.trim() !== ""}
             <p
-              class={`text-slate-500 leading-tight text-xs ${
+              class={`text-slate-500 mt-1 leading-tight text-xs ${
                 selectedOption === option.title ? "text-slate-900" : ""
               }`}
             >
