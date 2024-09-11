@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card-wrapper {
+  @apply p-3 sm:p-4 border sm:pt-0 relative cursor-default transition-all duration-300 rounded-xl sm:rounded-2xl bg-white hover:border-orange-500 ring-slate-300;
+}
+.card-wrapper-selected {
+  @apply bg-white border-orange-500 ring-4 ring-orange-500/20;
+}

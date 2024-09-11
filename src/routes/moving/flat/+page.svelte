@@ -3,6 +3,7 @@
 
   import Header from "$lib/Header.svelte";
   import HeadlineCard from "$lib/HeadlineCard.svelte";
+  import WrapperWithSingleSelectedItem from "$lib/WrapperWithSingleSelectedItem.svelte";
 
   let currentPrice = "Moving total £169";
   const movingBenefits = [
@@ -10,6 +11,37 @@
     "Professional movers with bodycams",
     "Insurance included in price",
   ];
+  const flatMovingVariants = [
+    {
+      title: "Mini Move",
+      description:
+        "up to 2 hrs • max 10 boxes or similar sized items • up to 25 miles",
+      price: "£169",
+    },
+    {
+      title: "1 bedroom/Studio",
+      description: "max 30 large boxes • up to 25 miles",
+      price: "£259",
+    },
+    {
+      title: "2 bedrooms",
+      description: "max 55 large boxes • up to 25 miles",
+      price: "£449",
+    },
+    {
+      title: "3 bedrooms",
+      description: "max 75 large boxes • up to 25 miles",
+      price: "£849",
+    },
+    {
+      title: "Personalised quote",
+      description:
+        "If you have a specific need, we can create a personalised quote for you",
+      price: "from £99",
+    },
+  ];
+  let selectedOption = "Mini Move"; // Preselect the "Mini Move" option
+  let slotPosition = 0;
 </script>
 
 <Header />
@@ -19,3 +51,11 @@
   image="/img/moving.svg"
   benefits={movingBenefits}
 />
+
+<WrapperWithSingleSelectedItem
+  options={flatMovingVariants}
+  bind:selectedOption
+  bind:slotPosition
+>
+  ddd
+</WrapperWithSingleSelectedItem>
