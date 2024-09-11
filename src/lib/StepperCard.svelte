@@ -1,5 +1,5 @@
 <script>
-  import Stepper from "$lib/stepper.svelte";
+  import Stepper from "$lib/Stepper.svelte";
   export let options = []; // Array of options (each card option)
   export let selectedOptions = []; // Allow two-way binding for multiple selected options
 
