@@ -57,7 +57,7 @@
           </div>
         {/if}
         {#if preselectedOption === option.title}
-          <div class="mt-4 sticky bottom-2">
+          <div class="mt-4 bottom-2">
             <NavButtons {nextAction} {prevAction} />
           </div>
         {/if}

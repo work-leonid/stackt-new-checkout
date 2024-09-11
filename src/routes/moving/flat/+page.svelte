@@ -127,10 +127,7 @@
     <ItemHeadline
       image="/img/moving/1bed.svg"
       benefits={benefits1Bedroom}
-      text="Our team makes your small move stress-free! Whether it’s a compact
-      space or a cozy home, we handle every detail with care, ensuring your
-      belongings arrive safely at your new place. Quick, efficient, and
-      affordable moving services!"
+      text="hether it’s a compact space or a cozy home, we handle every detail with care, ensuring your belongings arrive safely at your new place. Quick, efficient, and affordable moving services!"
     />
   {/if}
   {#if preselectedOption === "2 bedrooms"}
@@ -139,8 +136,7 @@
       benefits={benefits2Bedrooms}
       text="Our professional movers are ready to take the hassle out of your move.
       From packing and loading to transporting and unloading, we provide
-      full-service moving tailored to your needs. Trust us to make your move
-      smooth and seamless!"
+      full-service moving tailored to your needs."
     />
   {/if}
   {#if preselectedOption === "3 bedrooms"}
@@ -149,17 +145,15 @@
       benefits={benefits3Bedrooms}
       text="Our experienced movers ensure every room is packed, transported, and
       unpacked with precision and care. We handle large moves with ease, so
-      you can focus on settling into your new home. Reliable, professional,
-      and efficient service!"
+      you can focus on settling into your new home."
     />
   {/if}
   {#if preselectedOption === "Personalised quote"}
     <ItemHeadline
       image="/img/contact.svg"
-      text="We’re here to help! Contact us for a personalised quote tailored to your
+      text="Contact us for a personalised quote tailored to your
       move. Whether it’s a unique request or a custom plan, we’ll ensure you
-      get the best service at the right price. Get in touch today for your
-      bespoke moving solution!"
+      get the best service at the right price."
     />
     <MultichoiceCard
       options={personalisedQuoteVariants}
