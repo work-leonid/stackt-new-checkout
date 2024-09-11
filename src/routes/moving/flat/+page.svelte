@@ -1,9 +1,11 @@
 <script>
   import { goto } from "$app/navigation";
+  import { totalPrice } from "$lib/stores"; // Import the store to update the price
 
   import Header from "$lib/Header.svelte";
   import HeadlineCard from "$lib/HeadlineCard.svelte";
   import WrapperWithSingleSelectedItem from "$lib/WrapperWithSingleSelectedItem.svelte";
+  import ItemHeadline from "$lib/ItemHeadline.svelte";
 
   const movingBenefits = [
     "No overtime charges",
@@ -12,7 +14,7 @@
   ];
 
   function goToNextPage() {
-    goto("/moving/flat");
+    goto("/moving/packing");
   }
 
   const flatMovingVariants = [
@@ -46,6 +48,16 @@
   ];
   let preselectedOption = "Mini Move";
   let preSelectedSlotPosition = 0;
+
+  // Reactive statement to track the selected option's price
+  $: selectedOption = flatMovingVariants.find(
+    (option) => option.title === preselectedOption,
+  );
+
+  // Whenever the selected option changes, update the store with the price
+  $: if (selectedOption) {
+    totalPrice.set(parseFloat(selectedOption.price.replace(/[£,from ]/g, ""))); // Remove £ and commas from the price
+  }
 </script>
 
 <Header />
@@ -63,6 +75,9 @@
   nextAction={goToNextPage}
 >
   {#if preselectedOption === "Mini Move"}
+    <ItemHeadline title="Mini Move" />
     asdf!
   {/if}
 </WrapperWithSingleSelectedItem>
+
+<p>Price: {selectedOption?.price}</p>
