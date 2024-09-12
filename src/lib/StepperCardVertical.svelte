@@ -15,7 +15,7 @@
 <div class="flex overflow-x-scroll p-1 disable-scrollbars gap-2 *:shrink-0">
   {#each options as option, index}
     <div
-      class={`p-3 border flex flex-col sm:flex-col w-56 gap-2 sm:gap-3 justify-between transition-all duration-300 rounded-xl ${itemCounts[index] > 0 ? "bg-orange-50 ring-1 border-orange-500 ring-orange-500/20" : "bg-white  border-slate-200"}`}
+      class={`p-3 border flex flex-col sm:flex-col w-44 gap-2 sm:gap-3 justify-between transition-all duration-300 rounded-xl ${itemCounts[index] > 0 ? "bg-orange-50 ring-1 border-orange-500 ring-orange-500/20" : "bg-white  border-slate-200"}`}
     >
       <img
         src={`/img/${option.image}`}
