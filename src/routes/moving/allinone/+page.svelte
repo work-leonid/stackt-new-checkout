@@ -247,6 +247,9 @@
   <SingleButtonMain options={flatMovingVariants} bind:selectedOption />
   {#if selectedOption?.title === "Mini Move"}
     <div class="flex gap-2 mt-4 flex-col">
+      <h2 class="font-medium leading-tight text-lg">
+        Save your time with our additional services for {selectedOption?.title}
+      </h2>
       <SingleButtonChoice
         {options}
         bind:selectedOption={selectedPackingOption}
