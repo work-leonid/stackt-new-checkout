@@ -189,7 +189,7 @@
   ];
 
   // Initialize selectedService as an empty array (not null)
-  let preselectedOption = ""; // Default selected option for flat variants
+  let preselectedOption = "Mini Move"; // Default selected option for flat variants
   let selectedService = []; // Track selected services (Packing, Cleaning, etc.)
   let personalisedQuoteOptions = []; // Declare this variable for selected options in personalised quote
   let quoteOptions = []; // For other options like Packing, Cleaning
@@ -226,14 +226,31 @@
   image="/img/moving.svg"
   benefits={movingBenefits}
 />
-<SingleButtonMain options={flatMovingVariants} bind:selectedOption />
-{#if selectedOption?.title === "1 bedroom/Studio"}
-<div class="flex gap-2 flex-col">
-  <SingleButtonChoice options={unpacking} />
-  <SingleButtonChoice options={packingMaterials} />
-</div>
-{/if}
+<div>
+  <SingleButtonMain options={flatMovingVariants} bind:selectedOption />
+  {#if selectedOption?.title === "Mini Move"}
+    <div class="flex gap-2 mt-4 flex-col">
+      <h2>Packing</h2>
+      <SingleButtonChoice
+        {options}
+        bind:selectedOption={selectedPackingOption}
+      />
+      <SingleButtonChoice options={unpacking} />
+      <SingleButtonChoice options={packingMaterials} />
+      <h2>Assembly/Dissa</h2>
+      <SingleButtonChoice options={optionsassembly} />
+    </div>
+  {/if}
 
+  {#if selectedOption?.title === "1 bedroom/Studio"}
+    <div class="flex gap-2 flex-col">
+      <h2>Packing</h2>
+      <SingleButtonChoice options={unpacking} />
+      <SingleButtonChoice options={packingMaterials} />
+      <h2>Assembly/Dissa</h2>
+    </div>
+  {/if}
+</div>
 
 <div class="bg-slate-50 hidden border-y -px-4 py-3 overflow-hidden">
   <div class="relative">
@@ -271,7 +288,6 @@
   </div>
 </div>
 
-
 <div class="hidden">
   <div>
     <SingleButtonChoice {options} bind:selectedOption={selectedPackingOption} />
@@ -279,65 +295,65 @@
       <SingleButtonChoice options={optionsassembly} />
     {/if}
   </div>
-<!-- Wrapper for different flat moving variants -->
-<WrapperWithSingleSelectedItem
-  options={flatMovingVariants}
-  bind:preselectedOption
-  bind:preSelectedSlotPosition
->
-  {#if preselectedOption === "Mini Move"}
-    <ItemHeadline
-      image="/img/moving/mini.svg"
-      benefits={benefitsMiniMove}
-      text="The most cost-effective small space moving option not only among other options, but also among competitors."
-    />
-    <div class="flex flex-col gap-2">
-      <SingleButtonChoice {options} />
-      <!-- <PackingAdditionalServices /> -->
-      <SingleButtonChoice options={unpacking} />
-      <SingleButtonChoice options={packingMaterials} />
-      <div class="card-wrapper">End-of-tenancy cleaning</div>
-      <div class="card-wrapper">Storage</div>
-      <SingleButtonChoice options={optionsassembly} />
-    </div>
-  {/if}
+  <!-- Wrapper for different flat moving variants -->
+  <WrapperWithSingleSelectedItem
+    options={flatMovingVariants}
+    bind:preselectedOption
+    bind:preSelectedSlotPosition
+  >
+    {#if preselectedOption === "Mini Move"}
+      <ItemHeadline
+        image="/img/moving/mini.svg"
+        benefits={benefitsMiniMove}
+        text="The most cost-effective small space moving option not only among other options, but also among competitors."
+      />
+      <div class="flex flex-col gap-2">
+        <SingleButtonChoice {options} />
+        <!-- <PackingAdditionalServices /> -->
+        <SingleButtonChoice options={unpacking} />
+        <SingleButtonChoice options={packingMaterials} />
+        <div class="card-wrapper">End-of-tenancy cleaning</div>
+        <div class="card-wrapper">Storage</div>
+        <SingleButtonChoice options={optionsassembly} />
+      </div>
+    {/if}
 
-  {#if preselectedOption === "1 bedroom/Studio"}
-    <ItemHeadline
-      image="/img/moving/1bed.svg"
-      benefits={benefits1Bedroom}
-      text="Whether it’s a compact space or a cozy home, we handle every detail with care, ensuring your belongings arrive safely at your new place."
-    />
-  {/if}
+    {#if preselectedOption === "1 bedroom/Studio"}
+      <ItemHeadline
+        image="/img/moving/1bed.svg"
+        benefits={benefits1Bedroom}
+        text="Whether it’s a compact space or a cozy home, we handle every detail with care, ensuring your belongings arrive safely at your new place."
+      />
+    {/if}
 
-  {#if preselectedOption === "2 bedrooms"}
-    <ItemHeadline
-      image="/img/moving/2bed.svg"
-      benefits={benefits2Bedrooms}
-      text="Our professional movers are ready to take the hassle out of your move."
-    />
-  {/if}
+    {#if preselectedOption === "2 bedrooms"}
+      <ItemHeadline
+        image="/img/moving/2bed.svg"
+        benefits={benefits2Bedrooms}
+        text="Our professional movers are ready to take the hassle out of your move."
+      />
+    {/if}
 
-  {#if preselectedOption === "3 bedrooms"}
-    <ItemHeadline
-      image="/img/moving/3bed.svg"
-      benefits={benefits3Bedrooms}
-      text="Our experienced movers ensure every room is packed, transported, and unpacked with precision and care."
-    />
-  {/if}
+    {#if preselectedOption === "3 bedrooms"}
+      <ItemHeadline
+        image="/img/moving/3bed.svg"
+        benefits={benefits3Bedrooms}
+        text="Our experienced movers ensure every room is packed, transported, and unpacked with precision and care."
+      />
+    {/if}
 
-  {#if preselectedOption === "Personalised quote"}
-    <ItemHeadline
-      image="/img/contact.svg"
-      text="Contact us for a personalised quote tailored to your move."
-    />
-    <!-- Bind the selected options for personalised quote -->
-    <MultichoiceCard
-      options={personalisedQuoteVariants}
-      bind:selectedOptions={personalisedQuoteOptions}
-    />
-  {/if}
-</WrapperWithSingleSelectedItem>
+    {#if preselectedOption === "Personalised quote"}
+      <ItemHeadline
+        image="/img/contact.svg"
+        text="Contact us for a personalised quote tailored to your move."
+      />
+      <!-- Bind the selected options for personalised quote -->
+      <MultichoiceCard
+        options={personalisedQuoteVariants}
+        bind:selectedOptions={personalisedQuoteOptions}
+      />
+    {/if}
+  </WrapperWithSingleSelectedItem>
 
-<Pricing pricing={selectedOption?.price} />
+  <Pricing pricing={selectedOption?.price} />
 </div>

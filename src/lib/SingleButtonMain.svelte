@@ -19,12 +19,12 @@
   {#each options as option (option.title)}
     <!-- If no option is selected, or this option is selected, render it -->
     {#if selectedOption === null || selectedOption === option}
-      <div
-        class={`bg-white ring-1 ring-slate-200 p-4 rounded-2xl ${selectedOption === option ? "" : ""}`}
-      >
+      <div class={`${selectedOption === option ? "" : ""}`}>
         <!-- Option is not selected, show as a button -->
         {#if selectedOption === null}
-          <div class="flex gap-4 justify-between items-start">
+          <div
+            class="flex gap-4 p-4 justify-between ring-1 ring-slate-200 rounded-2xl items-start"
+          >
             <div class="flex w-full gap-4">
               <img src={option.image} alt="" class="size-28" />
               <div class="w-full flex-col flex justify-between">
@@ -56,10 +56,10 @@
 
         <!-- Option is selected, show as a card with a back button -->
         {#if selectedOption === option}
-          <div>
+          <div class="bg-orange-50 ring-1 ring-orange-200 rounded-2xl p-4">
             <div class="">
               <div class="flex w-full gap-4">
-                <img src={option.image} alt="" class="size-24" />
+                <img src={option.image} alt="" class="size-28" />
 
                 <div>
                   <div class="flex gap-4">
@@ -67,37 +67,38 @@
                       <h3 class="text-lg leading-none font-medium">
                         {option.title}
                       </h3>
-                      <p
-                        class="font-medium mb-1 text-lg leading-none text-orange-600"
-                      >
-                        {option.price}
-                      </p>
                       {#if option.description}
                         <p class="text-sm leading-tight">
                           {option.description}
                         </p>
                       {/if}
+                      <div class="flex justify-between items-center mt-2">
+                        <p
+                          class="font-medium text-lg leading-none text-orange-600"
+                        >
+                          {option.price}
+                        </p>
+                        <button
+                          class="size-8 shrink-0 flex items-center justify-center bg-orange-600 rounded-full"
+                          on:click={deselectOption}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-5 text-white"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-
-                    <button
-                      class="size-10 shrink-0 flex items-center justify-center bg-slate-100 rounded-full"
-                      on:click={deselectOption}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-5"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                        />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
