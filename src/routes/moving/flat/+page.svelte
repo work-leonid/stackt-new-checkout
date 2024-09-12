@@ -7,6 +7,7 @@
   import WrapperWithSingleSelectedItem from "$lib/WrapperWithSingleSelectedItem.svelte";
   import ItemHeadline from "$lib/ItemHeadline.svelte";
   import MultichoiceCard from "$lib/MultichoiceCard.svelte";
+  import Pricing from "$lib/Pricing.svelte";
 
   const movingBenefits = [
     "No overtime charges",
@@ -162,4 +163,4 @@
   {/if}
 </WrapperWithSingleSelectedItem>
 
-<p>Price: {selectedOption?.price}</p>
+<Pricing pricing={selectedOption?.price} />

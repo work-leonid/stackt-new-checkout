@@ -8,7 +8,7 @@
   }
 </script>
 
-<div class="grid sm:grid-cols-2 gap-2">
+<div class="grid grid-cols-2 gap-2">
   {#each options as option}
     <div
       class={`group card-wrapper ${
@@ -27,7 +27,7 @@
           />
         {/if}
 
-        <div class="flex flex-col flex-1">
+        <div class="flex z-20 flex-col flex-1">
           <div class="flex flex-col justify-between items-baseline">
             <h3
               class={`headline ${

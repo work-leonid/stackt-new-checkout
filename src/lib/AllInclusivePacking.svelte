@@ -1,0 +1,1 @@
+<div>Service details</div>

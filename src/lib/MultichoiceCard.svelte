@@ -2,6 +2,7 @@
   export let options = []; // Array of options
   export let selectedOptions = []; // Allow two-way binding for multiple selected options
 
+  $: selectedOptions = selectedOptions || [];
   // Function to handle selecting or deselecting a card
   function toggleOption(option) {
     if (selectedOptions.includes(option.title)) {

@@ -9,6 +9,7 @@
   import PackingAdditionalServices from "$lib/PackingAdditionalServices.svelte";
   import ItemHeadline from "$lib/ItemHeadline.svelte";
   import Stepper from "$lib/Stepper.svelte";
+  import Pricing from "$lib/Pricing.svelte";
 
   const packingBenefits = [
     "Proffessional packing materials",
@@ -132,9 +133,7 @@
         image="https://plus.unsplash.com/premium_photo-1723701918806-bf9b3b37a02a?q=80&w=3496&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       >
         <div class="flex flex-col gap-2">
-          <h3 class="headline">
-            How many furniture items do you need to pack?
-          </h3>
+          <h3 class="headline">How much furniture do you need to pack?</h3>
           <Stepper bind:count={itemCount} min={1} />
           <div>
             <p class="headline">
@@ -160,6 +159,8 @@
     <PackingAdditionalServices />
   {/if}
 </WrapperWithSingleSelectedItem>
+
+<Pricing pricing={selectedPackingOption?.price} />
 
 <div>
   <p>Price from first page: £{storedPriceFromFirstPage}</p>

@@ -9,5 +9,11 @@
     >
       Moving
     </a>
+    <a
+      href="/moving/allinone"
+      class="block p-4 bg-blue-500 text-white rounded hover:bg-blue-600"
+    >
+      Moving All-In-One
+    </a>
   </div>
 </div>

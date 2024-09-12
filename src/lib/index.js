@@ -15,3 +15,8 @@ export { default as NavButtons } from "./NavButtons.svelte";
 export { default as PackingAdditionalServices } from "./PackingAdditionalServices.svelte";
 export { default as SingleSelectCard } from "./SingleSelectCard.svelte";
 export { default as MonthPicker } from "./MonthPicker.svelte";
+export { default as Pricing } from "./Pricing.svelte";
+export { default as SingleButtonChoice } from "./SingleButtonChoice.svelte";
+export { default as AllInclusivePacking } from "./AllInclusivePacking.svelte";
+export { default as FurniturePacking } from "./FurniturePacking.svelte";
+export { default as SingleButtonMain } from "./SingleButtonMain.svelte";
