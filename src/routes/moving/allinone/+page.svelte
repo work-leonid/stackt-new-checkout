@@ -263,11 +263,19 @@
   {/if}
 
   {#if selectedOption?.title === "1 bedroom/Studio"}
-    <div class="flex gap-2 flex-col">
-      <h2>Packing</h2>
+    <div class="flex gap-2 mt-4 flex-col">
+      <h2 class="font-medium leading-tight text-lg">
+        Save your time with our additional services for {selectedOption?.title}
+      </h2>
+      <SingleButtonChoice
+        {options}
+        bind:selectedOption={selectedPackingOption}
+      />
+      <SingleButtonChoice {options} />
       <SingleButtonChoice options={unpacking} />
+      <SingleButtonChoice options={cleaningOptions} />
       <SingleButtonChoice options={packingMaterials} />
-      <h2>Assembly/Dissa</h2>
+      <SingleButtonChoice options={optionsassembly} />
     </div>
   {/if}
 </div>
