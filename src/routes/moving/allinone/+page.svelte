@@ -206,7 +206,7 @@
   ];
 
   // Initialize selectedService as an empty array (not null)
-  let preselectedOption = "Mini Move"; // Default selected option for flat variants
+  let preselectedOption = ""; // Default selected option for flat variants
   let selectedService = []; // Track selected services (Packing, Cleaning, etc.)
   let personalisedQuoteOptions = []; // Declare this variable for selected options in personalised quote
   let quoteOptions = []; // For other options like Packing, Cleaning
