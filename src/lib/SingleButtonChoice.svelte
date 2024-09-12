@@ -26,8 +26,10 @@
         {#if selectedOption === null}
           <div class="flex gap-4 justify-between items-start">
             <div class="flex w-full flex-col gap-1">
-              <div class="flex flex-col gap-1 justify-between items-baseline">
-                <h3 class="text-lg leading-none font-medium">
+              <div
+                class="flex text-lg flex-col gap-1 justify-between items-baseline"
+              >
+                <h3 class=" leading-none font-medium">
                   {option.title}
                 </h3>
                 <p class="font-medium text-orange-600 leading-none">
@@ -53,8 +55,8 @@
             <div class="">
               <div>
                 <div class="flex gap-4 justify-between items-start">
-                  <div class="flex flex-col gap-1">
-                    <h3 class="text-lg leading-none font-medium">
+                  <div class="flex text-lg flex-col gap-1">
+                    <h3 class="leading-none font-medium">
                       {option.title}
                     </h3>
                     <p class="font-medium text-orange-600 leading-none">

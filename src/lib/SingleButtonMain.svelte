@@ -79,7 +79,7 @@
                           {option.price}
                         </p>
                         <button
-                          class="size-8 shrink-0 flex items-center justify-center bg-orange-600 rounded-full"
+                          class="size-8 shrink-0 flex items-center justify-center bg-orange-50 rounded-full"
                           on:click={deselectOption}
                         >
                           <svg
@@ -88,7 +88,7 @@
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
-                            class="size-5 text-white"
+                            class="size-5"
                           >
                             <path
                               stroke-linecap="round"
