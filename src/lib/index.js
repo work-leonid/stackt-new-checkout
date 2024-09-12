@@ -20,3 +20,7 @@ export { default as SingleButtonChoice } from "./SingleButtonChoice.svelte";
 export { default as AllInclusivePacking } from "./AllInclusivePacking.svelte";
 export { default as FurniturePacking } from "./FurniturePacking.svelte";
 export { default as SingleButtonMain } from "./SingleButtonMain.svelte";
+
+export { default as UnpackingInfo } from "./UnpackingInfo.svelte";
+export { default as PackingMaterialsInfo } from "./PackingMaterialsInfo.svelte";
+export { default as StepperCardVertical } from "./StepperCardVertical.svelte";

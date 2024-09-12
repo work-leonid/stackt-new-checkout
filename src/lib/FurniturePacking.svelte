@@ -12,7 +12,7 @@
     class="rounded-xl h-28 object-cover"
   />
 
-  <p class="font-medium text-2xl leading-tight">
+  <p class="font-medium text-xl leading-tight">
     {itemCount} × £{179} =
     <span class="text-orange-600">£{packingByFurniturePrice}</span> total
   </p>

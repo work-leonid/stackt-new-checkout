@@ -26,11 +26,11 @@
         {#if selectedOption === null}
           <div class="flex gap-4 justify-between items-start">
             <div class="flex w-full flex-col gap-1">
-              <div class="flex justify-between items-baseline">
+              <div class="flex flex-col gap-1 justify-between items-baseline">
                 <h3 class="text-lg leading-none font-medium">
                   {option.title}
                 </h3>
-                <p class="font-medium text-lg leading-none text-orange-600">
+                <p class="font-medium text-orange-600 leading-none">
                   {option.price}
                 </p>
               </div>
@@ -60,10 +60,14 @@
                     <p class="font-medium text-orange-600 leading-none">
                       {option.price}
                     </p>
+
+                    {#if option.description}
+                      <p class="text-sm leading-tight">{option.description}</p>
+                    {/if}
                   </div>
 
                   <button
-                    class="size-10 flex items-center justify-center bg-slate-100 rounded-full"
+                    class="size-9 shrink-0 flex items-center justify-center bg-slate-100 rounded-full"
                     on:click={deselectOption}
                   >
                     <svg

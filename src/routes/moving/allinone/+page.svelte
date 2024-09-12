@@ -14,6 +14,8 @@
   import PackingAdditionalServices from "$lib/PackingAdditionalServices.svelte";
   import Stepper from "$lib/Stepper.svelte";
   import FurniturePacking from "$lib/FurniturePacking.svelte";
+  import UnpackingInfo from "$lib/UnpackingInfo.svelte";
+  import PackingMaterialsInfo from "$lib/PackingMaterialsInfo.svelte";
 
   const options = [
     {
@@ -50,6 +52,7 @@
       title: "Packing materials",
       description: "Professional recycled packing materials",
       price: "from £2.72/box",
+      component: PackingMaterialsInfo,
     },
   ];
   let multiselectedOptions = [];
@@ -58,7 +61,8 @@
     {
       title: "Unpacking service",
       description: "We will carefully unpack all your items after delivery.",
-      price: "169",
+      price: "£169",
+      component: UnpackingInfo,
     },
   ];
   let unpuckingOptions = [];
@@ -230,14 +234,13 @@
   <SingleButtonMain options={flatMovingVariants} bind:selectedOption />
   {#if selectedOption?.title === "Mini Move"}
     <div class="flex gap-2 mt-4 flex-col">
-      <h2>Packing</h2>
       <SingleButtonChoice
         {options}
         bind:selectedOption={selectedPackingOption}
       />
+      <SingleButtonChoice {options} />
       <SingleButtonChoice options={unpacking} />
       <SingleButtonChoice options={packingMaterials} />
-      <h2>Assembly/Dissa</h2>
       <SingleButtonChoice options={optionsassembly} />
     </div>
   {/if}
