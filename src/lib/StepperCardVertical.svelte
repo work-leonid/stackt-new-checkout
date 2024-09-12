@@ -20,7 +20,7 @@
       <img
         src={`/img/${option.image}`}
         alt="Wardrobe"
-        class={`size-20 ${itemCounts[index] > 0 ? "bg-orange-100" : "bg-slate-100"}  rounded-lg sm:w-full sm:h-auto`}
+        class={`size-20 ${itemCounts[index] > 0 ? "bg-orange-100" : "bg-slate-100"}  rounded-lg w-full sm:h-auto`}
       />
 
       <div
