@@ -19,39 +19,39 @@
   {#each options as option (option.title)}
     <!-- If no option is selected, or this option is selected, render it -->
     {#if selectedOption === null || selectedOption === option}
-      <div
-        class={`bg-white ring-1 ring-slate-200 p-4 rounded-2xl ${selectedOption === option ? "" : ""}`}
-      >
+      <div class={`${selectedOption === option ? "" : ""}`}>
         <!-- Option is not selected, show as a button -->
         {#if selectedOption === null}
-          <div class="flex gap-4 justify-between items-start">
-            <div class="flex w-full flex-col gap-1">
-              <div
-                class="flex text-lg flex-col gap-1 justify-between items-baseline"
-              >
-                <h3 class=" leading-none font-medium">
-                  {option.title}
-                </h3>
-                <p class="font-medium text-orange-600 leading-none">
-                  {option.price}
-                </p>
+          <div class="bg-white ring-1 ring-slate-200 p-4 rounded-2xl">
+            <div class="flex gap-4 justify-between items-start">
+              <div class="flex w-full flex-col gap-1">
+                <div
+                  class="flex text-lg flex-col gap-1 justify-between items-baseline"
+                >
+                  <h3 class=" leading-none font-medium">
+                    {option.title}
+                  </h3>
+                  <p class="font-medium text-orange-600 leading-none">
+                    {option.price}
+                  </p>
+                </div>
+                {#if option.description}
+                  <p class="text-sm leading-tight">{option.description}</p>
+                {/if}
               </div>
-              {#if option.description}
-                <p class="text-sm leading-tight">{option.description}</p>
-              {/if}
+              <button
+                class="bg-orange-600 text-white px-4 py-1 rounded-full text-base w-fit font-medium mt-2"
+                on:click={toggleOption(option)}
+              >
+                {option.button || "Add"}
+              </button>
             </div>
-            <button
-              class="bg-orange-600 text-white px-4 py-1 rounded-full text-base w-fit font-medium mt-2"
-              on:click={toggleOption(option)}
-            >
-              {option.button || "Add"}
-            </button>
           </div>
         {/if}
 
         <!-- Option is selected, show as a card with a back button -->
         {#if selectedOption === option}
-          <div>
+          <div class="bg-orange-50 ring-1 ring-orange-200 p-4 rounded-2xl">
             <div class="">
               <div>
                 <div class="flex gap-4 justify-between items-start">
@@ -64,12 +64,14 @@
                     </p>
 
                     {#if option.description}
-                      <p class="text-sm leading-tight">{option.description}</p>
+                      <p class="text-sm hidden leading-tight">
+                        {option.description}
+                      </p>
                     {/if}
                   </div>
 
                   <button
-                    class="size-9 shrink-0 flex items-center justify-center bg-slate-100 rounded-full"
+                    class="size-9 shrink-0 flex items-center justify-center bg-orange-50 rounded-full"
                     on:click={deselectOption}
                   >
                     <svg
@@ -90,14 +92,14 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="mt-2">
-            <!-- Conditionally render the component dynamically based on the selected option -->
-            {#if option.component}
-              <div>
-                <svelte:component this={option.component} />
-              </div>
-            {/if}
+            <div class="mt-2">
+              <!-- Conditionally render the component dynamically based on the selected option -->
+              {#if option.component}
+                <div>
+                  <svelte:component this={option.component} />
+                </div>
+              {/if}
+            </div>
           </div>
         {/if}
       </div>

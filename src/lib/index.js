@@ -24,3 +24,4 @@ export { default as SingleButtonMain } from "./SingleButtonMain.svelte";
 export { default as UnpackingInfo } from "./UnpackingInfo.svelte";
 export { default as PackingMaterialsInfo } from "./PackingMaterialsInfo.svelte";
 export { default as StepperCardVertical } from "./StepperCardVertical.svelte";
+export { default as CleaningInfo } from "./CleaningInfo.svelte";

@@ -4,6 +4,7 @@
   import SingleButtonChoice from "$lib/SingleButtonChoice.svelte";
   import SingleButtonMain from "$lib/SingleButtonMain.svelte";
   import AllInclusivePacking from "$lib/AllInclusivePacking.svelte";
+  import CleaningInfo from "$lib/CleaningInfo.svelte";
 
   import Header from "$lib/Header.svelte";
   import HeadlineCard from "$lib/HeadlineCard.svelte";
@@ -40,13 +41,25 @@
   const optionsassembly = [
     {
       title: "Assemble/Disassemble furniture",
+      price: "from £23",
       component: AllInclusivePacking,
     },
     {
       title: "Assemble/Disassemble with fixed price",
+      price: "from £549",
       component: AllInclusivePacking,
     },
   ];
+  const cleaningOptions = [
+    {
+      title: "Professional End-of-Tenancy Cleaning",
+      description:
+        "From top to bottom, we’ll clean and sanitise your kitchen, bathrooms, bedrooms and common areas.",
+      price: "£229",
+      component: CleaningInfo,
+    },
+  ];
+
   const packingMaterials = [
     {
       title: "Packing materials",
@@ -240,6 +253,7 @@
       />
       <SingleButtonChoice {options} />
       <SingleButtonChoice options={unpacking} />
+      <SingleButtonChoice options={cleaningOptions} />
       <SingleButtonChoice options={packingMaterials} />
       <SingleButtonChoice options={optionsassembly} />
     </div>
