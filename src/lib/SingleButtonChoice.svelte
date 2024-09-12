@@ -39,13 +39,13 @@
               {#if option.description}
                 <p class="text-sm leading-tight">{option.description}</p>
               {/if}
-              <button
-                class="bg-orange-600 text-white px-4 py-1 rounded-full text-base w-fit font-medium mt-2"
-                on:click={toggleOption(option)}
-              >
-                {option.button || "Add"}
-              </button>
             </div>
+            <button
+              class="bg-orange-600 text-white px-4 py-1 rounded-full text-base w-fit font-medium mt-2"
+              on:click={toggleOption(option)}
+            >
+              {option.button || "Add"}
+            </button>
           </div>
         {/if}
 
